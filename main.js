@@ -19,7 +19,7 @@ const ITEMS = [
     name: 'Sidebar & Progress',
     url: `${BASE}/ref-stripe-sidebar/`,
     poster: 'previews/stripe.webp',
-    live: [760, 475],
+    live: [900, 563],
   },
   {
     name: 'Dither Tiles',
