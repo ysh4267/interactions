@@ -1,0 +1,124 @@
+:root {
+  --bg: #f4f3ef;
+  --ink: #16161a;
+  --muted: #6d6c68;
+  --line: #e3e1db;
+  --card: #ffffff;
+  --accent: #e23a8e;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, -apple-system, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+@media (max-width: 1040px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgb(22 22 26 / 0.09);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin: 8px 8px 0;
+  border-radius: calc(var(--radius) - 7px);
+  background: #e9e7e1;
+}
+
+.media img,
+.media .live {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media img {
+  object-fit: cover;
+  display: block;
+}
+
+/* On hover the real page is rendered at desktop size and scaled down */
+.media .live {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.media .live.on { opacity: 1; }
+
+.media iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0;
+  transform-origin: 0 0;
+  transform: scale(var(--s, 0.3));
+}
+
+.no {
+  margin-right: 9px;
+  color: #a3a19b;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.meta {
+  padding: 14px 18px 16px;
+}
+
+.meta h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .media .live { transition: none; }
+}
