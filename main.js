@@ -16,16 +16,10 @@ const ITEMS = [
     poster: 'previews/box.webp',
   },
   {
-    name: 'Sidebar Toggle',
+    name: 'Sidebar & Progress',
     url: `${BASE}/ref-stripe-sidebar/`,
     poster: 'previews/stripe.webp',
     live: [760, 475],
-  },
-  {
-    name: 'Progress Pie',
-    url: `${BASE}/ref-things-progress/`,
-    poster: 'previews/things.webp',
-    live: [960, 600],
   },
   {
     name: 'Dither Tiles',
