@@ -18,6 +18,12 @@ const ITEMS = [
     live: [1280, 800],
   },
   {
+    name: 'Texture Card',
+    url: `${BASE}/ref-textures-card/`,
+    poster: 'previews/textures.webp',
+    live: [1280, 800],
+  },
+  {
     name: 'Vinyl',
     url: `${BASE}/ref-vinyl-player/`,
     poster: 'previews/vinyl.webp',
