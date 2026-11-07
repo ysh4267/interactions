@@ -3,18 +3,8 @@
 
 const BASE = 'https://ysh4267.github.io';
 
+// Pages that are already on the main site are not listed here.
 const ITEMS = [
-  {
-    name: 'Main Page',
-    url: `${BASE}/`,
-    top: true, // open in the top window so the main page does not load inside its own window
-    poster: 'previews/hoon.webp',
-  },
-  {
-    name: 'Box',
-    url: `${BASE}/box/`,
-    poster: 'previews/box.webp',
-  },
   {
     name: 'Sidebar & Progress',
     url: `${BASE}/ref-stripe-sidebar/`,
@@ -25,17 +15,6 @@ const ITEMS = [
     name: 'Dither Tiles',
     url: `${BASE}/ref-basedash-tiles/`,
     poster: 'previews/basedash.webp',
-    live: [1280, 800],
-  },
-  {
-    name: 'Tutorial',
-    url: `${BASE}/tutorial/`,
-    poster: 'previews/tutorial.webp',
-  },
-  {
-    name: 'Texture Card',
-    url: `${BASE}/ref-textures-card/`,
-    poster: 'previews/textures.webp',
     live: [1280, 800],
   },
   {
@@ -55,7 +34,6 @@ function card(item, index) {
   const a = document.createElement('a');
   a.className = 'card';
   a.href = item.url;
-  if (item.top) a.target = '_top';
 
   const media = document.createElement('div');
   media.className = 'media';
